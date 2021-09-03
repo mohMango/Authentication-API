@@ -5,6 +5,8 @@ import { authRoutes } from "./src/auth.routes.js";
 
 dotenv.config();
 
+const PORT = process.env.PORT || 5000;
+
 const app = express();
 
 app.use(express.json());
@@ -15,6 +17,6 @@ app.get("/", (req, res) => {
   res.send("home");
 });
 
-app.listen(5000, () => {
-  console.log("run on 5000");
+app.listen(PORT, () => {
+  console.log(`run on ${PORT}`);
 });
